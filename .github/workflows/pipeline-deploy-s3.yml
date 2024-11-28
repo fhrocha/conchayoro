@@ -1,5 +1,5 @@
 name: pipeline-deploy-s3
-'on':
+on:
   push: null
   branches:
     - main
