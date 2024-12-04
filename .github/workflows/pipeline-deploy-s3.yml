@@ -1,3 +1,4 @@
+---
 name: pipeline-deploy-s3
 
 on:
@@ -28,6 +29,12 @@ jobs:
       AWS_EC2_METADATA_DISABLED: true
       BUCKET_S3: ${{ vars.BUCKET_S3 }}
     steps:
+      - name: Manual Approval
+        uses: trstringer/manual-approval@v1
+        with: 
+          approvers: fhrocha
+          issue-title: "Deploying to DEV"
+          issue-body: "Please approve or deny the deployment"
       - uses: actions/download-artifact@v4
         with:
           name: site
