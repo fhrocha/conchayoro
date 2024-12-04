@@ -32,6 +32,7 @@ jobs:
       - name: Manual Approval
         uses: trstringer/manual-approval@v1
         with: 
+          secret: ${{ secrets.GITHUB_TOKEN }}
           approvers: fhrocha
           issue-title: "Deploying to DEV"
           issue-body: "Please approve or deny the deployment"
