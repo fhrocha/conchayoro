@@ -1,4 +1,5 @@
 name: integracao-ecr-eb
+
 on:
   push:
     branches: [ main ]
